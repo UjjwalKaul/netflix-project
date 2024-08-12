@@ -1,9 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { GithubIcon } from 'lucide-react';
 import Link from 'next/link';
-import Image from 'next/image';
-import googleIcon from '../../../public/google.svg';
+import GithubSignInButton from '@/app/components/GithubSignInButton';
+import GoogleSignInButton from '@/app/components/GoogleSignInButton';
 
 export default function Login() {
   return (
@@ -34,12 +33,8 @@ export default function Login() {
       </div>
 
       <div className="flex w-full justify-center items-center gap-x-3 mt-6">
-        <Button variant="outline" size="icon">
-          <GithubIcon className="w-6 h-6" />
-        </Button>
-        <Button variant="outline" size="icon">
-          <Image src={googleIcon} alt="Google Icon" className="w-8 h-8" />
-        </Button>
+        <GithubSignInButton />
+        <GoogleSignInButton />
       </div>
     </div>
   );
