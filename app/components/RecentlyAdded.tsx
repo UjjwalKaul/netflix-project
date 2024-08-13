@@ -6,15 +6,18 @@ async function getData() {
       id: true,
       overview: true,
       title: true,
-      WatchLists: true,
       imageString: true,
-      videoSource: true,
+      youtubeString: true,
+      age: true,
+      release: true,
+      duration: true,
     },
     orderBy: {
       createdAt: 'desc',
     },
     take: 4,
   });
+
   return data;
 }
 const RecentlyAdded = async () => {
