@@ -27,7 +27,7 @@ export default async function Login() {
             type="submit"
             variant="destructive"
             className="w-full bg-[#e50914]">
-            Sign Up
+            Login
           </Button>
         </div>
       </form>
