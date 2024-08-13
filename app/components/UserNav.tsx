@@ -3,8 +3,13 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { signOut } from 'next-auth/react';
 
 const UserNav = () => {
   return (
@@ -17,6 +22,24 @@ const UserNav = () => {
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-[15rem]" align="end" forceMount>
+        <DropdownMenuLabel>
+          <div className="flex flex-col space-y-1">
+            <p className="text-sm font-medium leading-none">Ujjawal</p>
+            <p className="text-xs leading-none text-muted-foreground">
+              ujjwal171@outlook.com
+            </p>
+          </div>
+        </DropdownMenuLabel>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem
+          className="cursor-pointer"
+          onClick={() => {
+            signOut();
+          }}>
+          Sign Out
+        </DropdownMenuItem>
+      </DropdownMenuContent>
     </DropdownMenu>
   );
 };
