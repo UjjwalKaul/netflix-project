@@ -1,7 +1,9 @@
+import MovieVideo from '../components/MovieVideo';
+
 const HomePage = () => {
   return (
     <>
-      <h1>Hello from Home</h1>
+      <MovieVideo />
     </>
   );
 };
