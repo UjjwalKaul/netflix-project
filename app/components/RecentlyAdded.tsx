@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import prisma from '../utils/db';
+import MovieCard from './MovieCard';
 async function getData() {
   const data = await prisma.movie.findMany({
     select: {
@@ -29,7 +30,7 @@ const RecentlyAdded = async () => {
               height={400}
               src={movie.imageString}
               alt="Thumbnail"
-              className="rounded-sm absolute w-full h-full object-cover hover:hidden"
+              className="rounded-sm absolute w-full h-full object-cover"
             />
             <div className="h-60 relative z-10 w-full transform transition duration-500 hover:scale-125 opacity-0 hover:opacity-100">
               <Image
@@ -39,6 +40,7 @@ const RecentlyAdded = async () => {
                 height={800}
                 className="absolute w-full h-full -z-10 rounded-lg object-cover"
               />
+              <MovieCard />
             </div>
           </div>
         );
