@@ -63,6 +63,9 @@ export default async function RecentlyAdded() {
                 watchListId={movie.WatchLists[0]?.id}
                 youtubeUrl={movie.youtubeString}
                 watchList={movie.WatchLists.length > 0 ? true : false}
+                age={movie.age}
+                year={movie.release}
+                time={movie.duration}
               />
             </div>
           </div>
