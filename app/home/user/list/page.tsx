@@ -32,7 +32,7 @@ async function getData(userId: string) {
 
 const WatchList = async () => {
   const session = await getServerSession(authOptions);
-  const data = await getData('abc'); // Replace 'abc' with the actual userId from session
+  const data = await getData(session?.user?.email as string); // Replace 'abc' with the actual userId from session
 
   return (
     <>
