@@ -1,5 +1,8 @@
+'use client';
 import { Button } from '@/components/ui/button';
 import { Heart, Play } from 'lucide-react';
+import PlayVideoModal from './PlayVideoModal';
+import { useState } from 'react';
 
 interface MovieCardProps {
   title: string;
@@ -23,12 +26,17 @@ const MovieCard = ({
   age,
   time,
 }: MovieCardProps) => {
+  const [open, setOpen] = useState(false);
   return (
     <>
-      <button className="-mt-14">
+      <button
+        onClick={() => {
+          setOpen(true);
+        }}
+        className="-mt-14">
         <Play
           fill="#09090b"
-          className="h-11 w-11 mt-10 text-zinc-950 bg-slate-300 rounded-full p-2"
+          className="h-11 w-11 mt-10 text-zinc-950 bg-slate-50 rounded-full p-2"
         />
       </button>
       <div className="right-5 top-5 absolute z-10">
@@ -59,6 +67,17 @@ const MovieCard = ({
           {overview}
         </p>
       </div>
+      <PlayVideoModal
+        youtubeUrl={youtubeUrl}
+        key={movieId}
+        title={title}
+        overview={overview}
+        state={open}
+        changaState={setOpen}
+        age={age}
+        duration={time}
+        release={year}
+      />
     </>
   );
 };

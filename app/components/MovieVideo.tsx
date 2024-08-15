@@ -44,6 +44,7 @@ export default async function MovieVideo() {
           {data?.overview || 'No Overview Available'}
         </p>
         <div className="flex gap-x-3 mt-4">
+          <Button>See More</Button>
           <Button>Learn More</Button>
         </div>
       </div>
