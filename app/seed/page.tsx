@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import prisma from '../utils/db';
 
-const SeedDatabase = () => {
+export default function SeedDatabase() {
   async function postData() {
     'use server';
     await prisma.movie.createMany({
@@ -165,6 +165,7 @@ const SeedDatabase = () => {
       ],
     });
   }
+
   return (
     <div className="m-5">
       <form action={postData}>
@@ -172,6 +173,4 @@ const SeedDatabase = () => {
       </form>
     </div>
   );
-};
-
-export default SeedDatabase;
+}

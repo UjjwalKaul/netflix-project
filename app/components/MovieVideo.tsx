@@ -2,20 +2,25 @@ import { Button } from '@/components/ui/button';
 import prisma from '../utils/db';
 
 async function getData() {
-  const data = await prisma.movie.findFirst({
-    select: {
-      title: true,
-      overview: true,
-      videoSource: true,
-      imageString: true,
-      release: true,
-      duration: true,
-      id: true,
-      age: true,
-      youtubeString: true,
-    },
-  });
-  return data;
+  try {
+    const data = await prisma.movie.findFirst({
+      select: {
+        title: true,
+        overview: true,
+        videoSource: true,
+        imageString: true,
+        release: true,
+        duration: true,
+        id: true,
+        age: true,
+        youtubeString: true,
+      },
+    });
+    return data;
+  } catch (error) {
+    console.error('Error fetching movie data:', error);
+    return null;
+  }
 }
 
 export default async function MovieVideo() {
@@ -33,9 +38,11 @@ export default async function MovieVideo() {
 
       <div className="absolute w-[90%] lg:w-[40%] mx-auto">
         <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">
-          {data?.title}
+          {data?.title || 'No Title Available'}
         </h1>
-        <p className="text-white text-lg mt-5 line-clamp-3">{data?.overview}</p>
+        <p className="text-white text-lg mt-5 line-clamp-3">
+          {data?.overview || 'No Overview Available'}
+        </p>
         <div className="flex gap-x-3 mt-4">
           <Button>Learn More</Button>
         </div>
