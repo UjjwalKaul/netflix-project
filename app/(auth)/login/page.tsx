@@ -33,7 +33,7 @@ export default async function Login() {
       </form>
 
       <div className="text-gray-500 text-sm mt-2 text-center">
-        Don't have an account?{' '}
+        Don&apos;t have an account?{' '}
         <Link className="text-white hover:underline" href="/sign-up">
           Sign up
         </Link>
