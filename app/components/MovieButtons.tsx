@@ -51,7 +51,7 @@ const MovieButtons = ({
         title={title}
         youtubeUrl={youtubeUrl}
         state={open}
-        changaState={setOpen}
+        changeState={setOpen}
       />
     </>
   );
