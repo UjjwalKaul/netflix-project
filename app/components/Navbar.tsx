@@ -32,7 +32,7 @@ const links: linkProps[] = [
     href: '/home/user/list',
   },
 ];
-const Navbar = () => {
+const Navbar = ({ name, email }: { name: string; email: string }) => {
   const pathName = usePathname();
   return (
     <div className="w-full mx-auto items-center justify-between px-5 sm:px-6 py-5 lg:px-12 flex">
@@ -69,7 +69,7 @@ const Navbar = () => {
       <div className="flex items-center gap-x-8">
         <SearchIcon className="w-6 h-6 text-gray-300 cursor-pointer" />
         <Bell className="h-6 w-6 text-gray-300 cursor-pointer" />
-        <UserNav />
+        <UserNav name={name} email={email} />
       </div>
     </div>
   );

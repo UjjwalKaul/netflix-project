@@ -10,7 +10,10 @@ const HomeLayout = async ({ children }: { children: React.ReactNode }) => {
   }
   return (
     <>
-      <Navbar />
+      <Navbar
+        name={session.user?.name as string}
+        email={session.user?.email as string}
+      />
       <main className="w-full mx-auto sm:px-6 lg:px-12">{children}</main>
     </>
   );
