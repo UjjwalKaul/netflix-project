@@ -11,7 +11,7 @@ interface PlayVideoModalProps {
   overview: string;
   youtubeUrl: string;
   state: boolean;
-  changaState: any;
+  changeState: any;
   release: number;
   age: number;
   duration: number;
@@ -21,7 +21,7 @@ const PlayVideoModal = ({
   overview,
   youtubeUrl,
   state,
-  changaState,
+  changeState,
   age,
   release,
   duration,
@@ -30,7 +30,7 @@ const PlayVideoModal = ({
     <Dialog
       open={state}
       onOpenChange={() => {
-        changaState(!state);
+        changeState(!state);
       }}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
